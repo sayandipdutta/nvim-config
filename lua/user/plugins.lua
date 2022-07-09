@@ -69,7 +69,7 @@ return packer.startup(function(use)
   use "kevinhwang91/nvim-bqf"
   use "ThePrimeagen/harpoon"
   use "MattesGroeger/vim-bookmarks"
-  -- use "Mephistophiles/surround.nvim"
+  use "Mephistophiles/surround.nvim"
   use { "michaelb/sniprun", run = "bash ./install.sh" }
   use {
 
@@ -82,18 +82,18 @@ return packer.startup(function(use)
   -- UI
   use "stevearc/dressing.nvim"
   use "ghillb/cybu.nvim"
-  use { "christianchiarulli/nvim-gps", branch = "text_hl" }
+  -- use { "christianchiarulli/nvim-gps", branch = "text_hl" }
   use "tversteeg/registers.nvim"
   use "rcarriga/nvim-notify"
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
-  use "tamago324/lir.nvim"
+  -- use "tamago324/lir.nvim"
   use "goolord/alpha-nvim"
   use "folke/which-key.nvim"
   use "folke/zen-mode.nvim"
   use "karb94/neoscroll.nvim"
   use "folke/todo-comments.nvim"
-  use "andymass/vim-matchup"
+  -- use "andymass/vim-matchup"
 
   -- Colorschemes
   use "folke/tokyonight.nvim"
@@ -110,13 +110,13 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-emoji"
   use "hrsh7th/cmp-nvim-lua"
-  use "zbirenbaum/copilot-cmp"
-  use {
-    "tzachar/cmp-tabnine",
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
-  }
-
+  -- use "zbirenbaum/copilot-cmp"
+  -- use {
+  --   "tzachar/cmp-tabnine",
+  --   run = "./install.sh",
+  --   requires = "hrsh7th/nvim-cmp",
+  -- }
+  --
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
@@ -130,15 +130,15 @@ return packer.startup(function(use)
   use "b0o/SchemaStore.nvim"
   use "folke/trouble.nvim"
   -- use "github/copilot.vim"
-  use {
-    "zbirenbaum/copilot.lua",
-    event = { "VimEnter" },
-    config = function()
-      vim.defer_fn(function()
-        require "user.copilot"
-      end, 100)
-    end,
-  }
+  -- use {
+  --   "zbirenbaum/copilot.lua",
+  --   event = { "VimEnter" },
+  --   config = function()
+  --     vim.defer_fn(function()
+  --       require "user.copilot"
+  --     end, 100)
+  --   end,
+  -- }
   use "RRethy/vim-illuminate"
   use "stevearc/aerial.nvim"
   use "j-hui/fidget.nvim"
