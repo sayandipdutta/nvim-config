@@ -58,7 +58,7 @@ local setup = {
   ignore_missing = true, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
   show_help = false, -- show help message on the command line when the popup is visible
-  -- triggers = "auto", -- automatically setup triggers
+  -- trigger "auto", -- automatically setup triggers
   -- triggers = {"<leader>"} -- or specify a list manually
   triggers_blacklist = {
     -- list of mode / prefixes that should never be hooked by WhichKey
@@ -78,16 +78,16 @@ local opts = {
   nowait = true, -- use `nowait` when creating keymaps
 }
 
-local m_opts = {
+local Z_opts = {
   mode = "n", -- NORMAL mode
-  prefix = "m",
+  prefix = "Z",
   buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
   silent = true, -- use `silent` when creating keymaps
   noremap = true, -- use `noremap` when creating keymaps
   nowait = true, -- use `nowait` when creating keymaps
 }
 
-local m_mappings = {
+local Z_mappings = {
   a = { "<cmd>silent BookmarkAnnotate<cr>", "Annotate" },
   c = { "<cmd>silent BookmarkClear<cr>", "Clear" },
   m = { "<cmd>silent BookmarkToggle<cr>", "Toggle" },
@@ -105,11 +105,6 @@ local m_mappings = {
 
 local mappings = {
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
-  b = { "<cmd>lua require('user.bfs').open()<cr>", "Buffers" },
-  -- ["b"] = {
-  --   "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
-  --   "Buffers",
-  -- },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w<CR>", "Write" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No HL" },
@@ -156,10 +151,14 @@ local mappings = {
     t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
   },
 
-  s = {
-    name = "Split",
+  b = {
+    name = "Buffer",
     s = { "<cmd>split<cr>", "HSplit" },
     v = { "<cmd>vsplit<cr>", "VSplit" },
+    b = {
+      "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
+      "Buffers",
+    },
   },
 
   r = {
@@ -276,15 +275,15 @@ local mappings = {
 
   },
 
-  -- s = {
-  --   name = "Surround",
-  --   ["."] = { "<cmd>lua require('surround').repeat_last()<cr>", "Repeat" },
-  --   a = { "<cmd>lua require('surround').surround_add(true)<cr>", "Add" },
-  --   d = { "<cmd>lua require('surround').surround_delete()<cr>", "Delete" },
-  --   r = { "<cmd>lua require('surround').surround_replace()<cr>", "Replace" },
-  --   q = { "<cmd>lua require('surround').toggle_quotes()<cr>", "Quotes" },
-  --   b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
-  -- },
+  s = {
+    name = "Surround",
+    ["."] = { "<cmd>lua require('surround').repeat_last()<cr>", "Repeat" },
+    a = { "<cmd>lua require('surround').surround_add(true)<cr>", "Add" },
+    d = { "<cmd>lua require('surround').surround_delete()<cr>", "Delete" },
+    r = { "<cmd>lua require('surround').surround_replace()<cr>", "Replace" },
+    q = { "<cmd>lua require('surround').toggle_quotes()<cr>", "Quotes" },
+    b = { "<cmd>lua require('surround').toggle_brackets()<cr>", "Brackets" },
+  },
 
   S = {
     -- name = "Session",
@@ -340,4 +339,4 @@ local vmappings = {
 which_key.setup(setup)
 which_key.register(mappings, opts)
 which_key.register(vmappings, vopts)
-which_key.register(m_mappings, m_opts)
+which_key.register(Z_mappings, Z_opts)
