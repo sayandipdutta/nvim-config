@@ -1,2 +1,3 @@
-pcall(vim.cmd, "set " .. "bg=light")
+pcall(vim.cmd, "set " .. "bg=dark")
+
 
