@@ -51,7 +51,7 @@ return {
     {
         treesitter = { "python" },
         mason = { "basedpyright", "pyright", "ruff", "ty", "pyrefly" },
-        lsp = { "basedpyright" },
+        lsp = { "ty" },
     },
     {
         mason = { "copilot-language-server" },

@@ -15,6 +15,7 @@ require("config.ui")
 require("config.explorer") -- only mini.files
 require("config.sessions")
 require("config.trouble")
+require("config.web")
 
 -- Setup lazy.nvim
 -- require("lazy").setup({
@@ -147,6 +148,7 @@ vim.lsp.config("ruff", {
 vim.lsp.enable("ruff")
 vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format, { desc = "[C]ode [F]ormat" })
 
+vim.lsp.enable("pyrefly", false)
 vim.lsp.enable("ty")
 
 local function create_diagnostic_toggler()
