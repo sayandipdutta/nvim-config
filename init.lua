@@ -1,11 +1,11 @@
 require("config.options")
 require("config.keymaps")
 require("config.autocmd")
-
 require("config.picker") -- contains explorer, and lazygit
-require("config.treesitter")
+-- require("config.treesitter")
 require("config.mason")
 require("config.lsp")
+require("config.git")
 require("config.formatter")
 require("config.linter")
 require("config.dap")
@@ -15,7 +15,8 @@ require("config.ui")
 require("config.explorer") -- only mini.files
 require("config.sessions")
 require("config.trouble")
-require("config.web")
+require("config.movement")
+-- require("config.web")
 
 -- Setup lazy.nvim
 -- require("lazy").setup({

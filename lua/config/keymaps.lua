@@ -54,7 +54,8 @@ map("n", "<leader>tbg", function()
 end, { desc = "Toggle Background" })
 
 
-vim.keymap.set('t', '<C-w>h', '<C-\\><C-n><C-w>h')
-vim.keymap.set('t', '<C-w>l', '<C-\\><C-n><C-w>l')
-vim.keymap.set('t', '<C-w>j', '<C-\\><C-n><C-w>j')
-vim.keymap.set('t', '<C-w>k', '<C-\\><C-n><C-w>k')
+map('t', '<C-w>h', '<C-\\><C-n><C-w>h')
+map('t', '<C-w>l', '<C-\\><C-n><C-w>l')
+map('t', '<C-w>j', '<C-\\><C-n><C-w>j')
+map('t', '<C-w>k', '<C-\\><C-n><C-w>k')
+

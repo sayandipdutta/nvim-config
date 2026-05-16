@@ -6,6 +6,8 @@ vim.pack.add({
   { src = "https://github.com/folke/noice.nvim" },
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/nvim-mini/mini.icons" },
+  { src = "https://github.com/bluz71/vim-moonfly-colors" },
+  { src = "https://github.com/binbandit/achroma.nvim" },
 }, { confirm = false })
 
 -- require("catppuccin").setup({
@@ -51,7 +53,7 @@ vim.pack.add({
 --   update_background()
 -- end
 -- vim.cmd.colorscheme("catppuccin")
-
+vim.cmd.colorscheme("moonfly")
 -- vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>", { desc = "Go to the previous pane" })
 -- vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Got to the left pane" })
 -- vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Got to the down pane" })
