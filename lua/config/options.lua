@@ -86,7 +86,8 @@ vim.opt.foldmethod = 'expr'
 vim.opt.foldlevelstart = 99
 vim.opt.undofile = true
 -- Comment this line
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+local home_dir = os.getenv("HOME") or os.getenv("USERPROFILE")
+vim.opt.undodir = home_dir .. "/.vim/undodir"
 -- vim.o.winborder = "rounded"
 
 -- global vars
@@ -96,7 +97,7 @@ vim.g.localmapleader = " "
 
 
 -- python
-vim.g.python3_host_prog = vim.fs.joinpath(vim.env.HOME, "projects/neovim-venv/venv/bin/python")
+-- vim.g.python3_host_prog = vim.fs.joinpath(vim.env.HOME, "projects/neovim-venv/venv/bin/python")
 
 
 
@@ -114,16 +115,21 @@ vim.g.python3_host_prog = vim.fs.joinpath(vim.env.HOME, "projects/neovim-venv/ve
 --     },
 --     cache_enabled = 0,
 -- }
---
-vim.g.clipboard = {
-    name = "win32yank-wsl",
-    copy = {
-        ["+"] = "win32yank.exe -i --crlf",
-        ["*"] = "win32yank.exe -i --crlf",
-    },
-    paste = {
-        ["+"] = "win32yank.exe -o --lf",
-        ["*"] = "win32yank.exe -o --lf",
-    },
-    cache_enabled = 0,
-}
+
+local in_wsl = os.getenv("WSL_DISTRO_NAME") ~= nil
+
+if in_wsl then
+    vim.g.clipboard = {
+        name = "win32yank-wsl",
+        copy = {
+            ["+"] = "win32yank.exe -i --crlf",
+            ["*"] = "win32yank.exe -i --crlf",
+        },
+        paste = {
+            ["+"] = "win32yank.exe -o --lf",
+            ["*"] = "win32yank.exe -o --lf",
+        },
+        cache_enabled = 0,
+    }
+end   
+
