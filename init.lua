@@ -218,5 +218,12 @@ vim.diagnostic.handlers.loclist = {
         vim.api.nvim_set_current_win(winid)
     end
 }
+
+vim.keymap.set("n", "<leader>uu", function()
+    vim.cmd.packadd("nvim-undotree")
+    require("undotree").open()
+end, { desc = "Toggle Built-in UndoTree" })
+
+
 -- vim.keymap.set('i', '<C-h>', vim.lsp.buf.signature_help, { desc = "Signature [H]elp" })
 -- ^ this is handled by C-S
