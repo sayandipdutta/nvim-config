@@ -58,7 +58,7 @@ require("config.movement")
 -- }
 -- )
 
-vim.keymap.set({ 'n', 't' }, '', -- this is <C-/>
+vim.keymap.set({ 'n', 't' }, '<C-/>', -- this is <C-/>
     function()
         Snacks.terminal()
     end, { desc = "Toggle Terminal" })
