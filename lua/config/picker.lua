@@ -84,26 +84,6 @@ require("snacks").setup({
                 truncate = 80,
             },
         },
-        win = {
-            input = {
-                keys = {
-                    ---@diagnostic disable-next-line: assign-type-mismatch
-                    ["<C-o>"] = { { "pick_win", "jump" }, mode = { "n", "i" } },
-                    ["<c-D>"] = { "inspect", mode = { "n", "i" } },
-                    ["<c-F>"] = { "toggle_follow", mode = { "i", "n" } },
-                    ["<c-H>"] = { "toggle_hidden", mode = { "i", "n" } },
-                    ["<c-I>"] = { "toggle_ignored", mode = { "i", "n" } },
-                    ["<c-M>"] = { "toggle_maximize", mode = { "i", "n" } },
-                    ["<M-C-P>"] = { "toggle_preview", mode = { "i", "n" } },
-                },
-            },
-            list = {
-                keys = {
-                    ---@diagnostic disable-next-line: assign-type-mismatch
-                    ["<C-o>"] = { { "pick_win", "jump" }, mode = { "n", "i" } },
-                },
-            },
-        },
     },
 })
 
