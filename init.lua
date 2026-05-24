@@ -57,6 +57,11 @@ require("config.movement")
 --     checker = { enabled = false },
 -- }
 -- )
+vim.keymap.set({ 'n', 't' }, '',
+    function()
+        vim.print("Trying to open snacks terminal")
+        Snacks.terminal()
+    end, { desc = "Toggle Terminal" })
 
 vim.keymap.set({ 'n', 't' }, '<C-/>', -- this is <C-/>
     function()

@@ -147,10 +147,11 @@ vim.keymap.set("n", "<leader>sq", Snacks.picker.qflist, { desc = "Quickfix List"
 vim.keymap.set("n", "<leader>sr", Snacks.picker.lsp_references, { desc = "Lsp References" })
 --                 { "<leader>sR", Snacks.picker.resume, desc = "Resume" },
 vim.keymap.set("n", "<leader>su", Snacks.picker.undo, { desc = "Undo History" })
--- terminal
+-- explorer
 vim.keymap.set("n", "<leader>e", toggle_explorer(), { desc = "Explorer Snacks (root)" })
 vim.keymap.set("n", "<leader>E", toggle_explorer(vim.fn.getcwd()), { desc = "Explorer Snacks (cwd)" })
 vim.keymap.set("n", "<leader>E", toggle_explorer(vim.fn.getcwd()), { desc = "Explorer Snacks (cwd)" })
+-- terminal
 vim.keymap.set("n", "<leader>tt", function() Snacks.terminal() end, { desc = "Toggle Terminal" })
 vim.keymap.set("n", "<leader>tn", Snacks.terminal.open, { desc = "New Terminal" })
 -- ui
@@ -168,10 +169,10 @@ vim.keymap.set("n", "<leader>uC", Snacks.picker.colorschemes, { desc = "Colorsch
 
 vim.keymap.set("n", "[r", function()
     Snacks.words.jump(-vim.v.count1)
-end, { desc = "Jum to Previous reference", remap = true })
+end, { desc = "Jump to Previous reference", remap = true })
 vim.keymap.set("n", "]r", function()
     Snacks.words.jump(vim.v.count1)
-end, { desc = "Jum to Next reference", remap = true })
+end, { desc = "Jump to Next reference", remap = true })
 
 
 ---- LSP
