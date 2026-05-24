@@ -12,7 +12,7 @@ require("conform").setup({
     typescriptreact = { "eslint_d", "prettier" },
     vue = { "eslint_d", "prettier" },
     yaml = { "yq" },
-    python = { "ruff" },
+    python = { "ruff_format", "ruff_organize_imports" },
     javascript = { "prettierd", "prettier", stop_after_first = true },
   },
 
