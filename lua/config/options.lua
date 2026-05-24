@@ -97,7 +97,10 @@ vim.g.localmapleader = " "
 
 
 -- python
--- vim.g.python3_host_prog = vim.fs.joinpath(vim.env.HOME, "projects/neovim-venv/venv/bin/python")
+local python3_prog = vim.fs.joinpath(vim.env.HOME, "projects/neovim-venv/venv/bin/python")
+if vim.uv.fs_stat(python3_prog) then
+    vim.g.python3_host_prog = python3_prog
+end
 
 
 
