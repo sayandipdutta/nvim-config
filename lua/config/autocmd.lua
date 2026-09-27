@@ -22,3 +22,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     (vim.hl or vim.highlight).on_yank()
   end,
 })
+
+vim.api.nvim_create_user_command("FormatToggle", function(args)
+  if args.bang then
+    -- FormatDisable! will disable formatting just for this buffer
+    vim.b.disable_autoformat = true
+  else
+    vim.g.disable_autoformat = true
+  end
+end, {
+  desc = "Toggle autoformat-on-save",
+  bang = true,
+})

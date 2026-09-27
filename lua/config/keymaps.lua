@@ -59,3 +59,6 @@ map('t', '<C-w>l', '<C-\\><C-n><C-w>l')
 map('t', '<C-w>j', '<C-\\><C-n><C-w>j')
 map('t', '<C-w>k', '<C-\\><C-n><C-w>k')
 
+-- Toggle formatting
+map("n", "<leader>uf", "<cmd>ToggleFormat<cr>", { desc = "Toggle formatting globally" })
+map("n", "<leader>uF", "<cmd>ToggleFormat!<cr>", { desc = "Toggle formatting locally" })
