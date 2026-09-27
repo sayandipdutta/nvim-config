@@ -13,9 +13,9 @@ require("snacks").setup({
     picker = {
         prompt = "󰍉 ",
         sources = {
-            grep = {
-                hidden = true,
-            },
+            -- grep = {
+            --     hidden = true,
+            -- },
             explorer = {
                 layout = {
                     layout = { preset = "left" },
