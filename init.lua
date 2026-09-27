@@ -29,34 +29,9 @@ require("config.trouble")
 require("config.movement")
 -- require("config.web")
 
--- Setup lazy.nvim
--- require("lazy").setup({
---     spec = {
---         -- add your plugins here
---         {
---             "zenbones-theme/zenbones.nvim",
---             -- Optionally install Lush. Allows for more configuration or extending the colorscheme
---             -- If you don't want to install lush, make sure to set g:zenbones_compat = 1
---             -- In Vim, compat mode is turned on as Lush only works in Neovim.
---             dependencies = "rktjmp/lush.nvim",
---             lazy = false,
---             priority = 1000,
---             -- you can set set configuration options here
---             config = function()
---                 -- vim.g.zenbones_darken_comments = 45
---                 vim.cmd.colorscheme('neobones')
---             end
---         }
---     },
--- ,
---
---     -- Configure any other settings here. See the documentation for more details.
---     -- colorscheme that will be used when installing plugins.
---     install = { colorscheme = { "default" } },
---     -- automatically check for plugin updates
---     checker = { enabled = false },
--- }
--- )
+-- undotree
+vim.cmd("packadd nvim.undotree")
+
 vim.keymap.set({ 'n', 't' }, '',
     function()
         vim.print("Trying to open snacks terminal")
@@ -116,6 +91,7 @@ vim.lsp.config['basedpyright'] = {
     }
 }
 vim.lsp.enable("basedpyright", false)
+vim.lsp.enable("css-lsp")
 
 -- vim.lsp.config["mojo_ls"] = {
 --     cmd = { 'mojo-lsp-server' },
@@ -167,6 +143,7 @@ vim.keymap.set('n', '<leader>cf', vim.lsp.buf.format, { desc = "[C]ode [F]ormat"
 
 vim.lsp.enable("pyrefly", false)
 vim.lsp.enable("ty")
+vim.lsp.enable("zuban", false)
 
 local function create_diagnostic_toggler()
     local hidden = false
