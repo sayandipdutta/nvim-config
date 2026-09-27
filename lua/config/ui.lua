@@ -7,9 +7,11 @@ vim.pack.add({
   { src = "https://github.com/nvim-tree/nvim-web-devicons" },
   { src = "https://github.com/nvim-mini/mini.icons" },
   { src = "https://github.com/bluz71/vim-moonfly-colors" },
+  { src = "https://github.com/oskarnurm/koda.nvim" },
   { src = "https://github.com/binbandit/achroma.nvim" },
+  { src = "https://github.com/ellisonleao/gruvbox.nvim" }
 }, { confirm = false })
-
+require("gruvbox").setup()
 -- require("catppuccin").setup({
 --   flavour = "auto",
 --   transparent_background = true,
@@ -53,7 +55,10 @@ vim.pack.add({
 --   update_background()
 -- end
 -- vim.cmd.colorscheme("catppuccin")
-vim.cmd.colorscheme("moonfly")
+-- vim.cmd.colorscheme("moonfly")
+vim.cmd.colorscheme("gruvbox")
+vim.cmd.highlight("Normal guibg=black")
+vim.cmd.highlight("SignColumn guibg=black")
 -- vim.keymap.set("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>", { desc = "Go to the previous pane" })
 -- vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Got to the left pane" })
 -- vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Got to the down pane" })
