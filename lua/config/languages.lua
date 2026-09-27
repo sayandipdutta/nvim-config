@@ -29,9 +29,14 @@ return {
         lsp = { "yamlls" },
     },
     {
-        treesitter = { "javascript", "typescript", "tsx", "html", "css" },
+        treesitter = { "javascript", "typescript", "tsx", "html"},
         mason = { "vtsls", "eslint_d", "prettier", "prettierd" },
         lsp = { "vtsls" },
+    },
+    {
+        treesitter = { "css" },
+        mason = { "tailwindcss-language-server" },
+        lsp = { "tailwindcss" },
     },
     {
         treesitter = { "bash" },
@@ -50,8 +55,8 @@ return {
     },
     {
         treesitter = { "python" },
-        mason = { "basedpyright", "pyright", "ruff", "ty", "pyrefly" },
-        lsp = { "ty" },
+        mason = { "basedpyright", "pyright", "ruff", "ty", "pyrefly", "zuban" },
+        lsp = { "basedpyright" },
     },
     {
         mason = { "copilot-language-server" },
